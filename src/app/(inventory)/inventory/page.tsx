@@ -339,9 +339,11 @@ const Inventory = () => {
                         }}
                       >
                         <div style={{ display: 'flex', gap: 5 }}>
-                          {descriptorMapping(data.descriptors).map((v) => (
-                            <span>{v}</span>
-                          ))}
+                          {descriptorMapping(data.descriptors).map(
+                            (v, indexDescriptor) => (
+                              <span key={`${indexDescriptor}.desc`}>{v}</span>
+                            )
+                          )}
                         </div>
                       </div>
                     );
